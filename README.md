@@ -71,6 +71,6 @@ The evidence slide now ranks all nine lagging regions and annotates target gaps.
 
 Public repository: [c3bod/sdaia-storytelling-tayseer-capstone](https://github.com/c3bod/sdaia-storytelling-tayseer-capstone). [Submission details and final team handoff](docs/SUBMISSION_READY.md).
 
-Write-access invitations were issued to `SanadAlkhamali` and `1Hathall` on 2026-10-06. Acceptance remains the teammates' action; invitations do not imply completed contributions.
+Write-access invitations were issued on 2026-10-06. The final access check confirms `SanadAlkhamali` has write access; `1Hathall` still has a pending invitation. Access and invitations do not imply completed analytical contributions.
 
 Copy this public repository URL into the instructor's Google Form. The form URL has not been supplied, so form submission remains outstanding. Collaborator invitations must be accepted by teammates before access is active. Tableau opening/visual verification and a timed team rehearsal remain necessary before final submission.

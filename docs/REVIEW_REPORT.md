@@ -28,7 +28,7 @@ The independent reviewer confirmed national arithmetic-mean adoption of 63.32834
 | Day 2 Tableau evidence and annotated Tableau export | Original Day 2 dashboard was not supplied; the replacement workbook was built from CSV. Tableau is not installed here | Align with the original Day 2 workbook or obtain instructor acceptance of the replacement; open it in Tableau, check values/appearance and export the evidence chart |
 | Tableau calculation and visual execution | Official XML schema and source-package checks passed, but those do not prove actual application behavior | Follow TABLEAU_GUIDE.md and record the actual application check |
 | Seven-minute delivery, presence and Q&A | Scripts and speaker assignments are prepared; no actual group rehearsal was observed | Rehearse with a timer and the live dashboard |
-| Teammate access and contributions | Invitations were issued; acceptance and team-authored contributions cannot be completed on others' behalf | Sanad and Hathal accept their invitations and review/contribute themselves |
+| Teammate access and contributions | Final access check confirms Sanad has write access; Hathal's invitation remains pending. Access does not establish authored contributions | Hathal accepts the remaining invitation; both teammates review and contribute themselves |
 | Google Form submission | Instructor's form URL was not supplied | Submit the public repository URL through that exact form |
 
 The corrected artifact package is prepared and reviewed. Full course submission cannot be represented as completed while these requirements remain open.
