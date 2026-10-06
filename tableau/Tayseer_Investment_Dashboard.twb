@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workbook xmlns:user="http://www.tableausoftware.com/xml/user" original-version="26.1" source-build="0.0.0 (0000.0.0.0)" source-platform="win" version="26.1">
+  <document-format-change-manifest>
+    <ManifestByVersion/>
+  </document-format-change-manifest>
+  <preferences>
+    <preference name="ui.encoding.shelf.height" value="24"/>
+  </preferences>
+  <datasources>
+    <datasource name="tayseer" caption="Tayseer synthetic training data" inline="true" version="26.1">
+      <connection class="textscan" directory="Data" filename="tayseer_services_synthetic.csv" password="" server="">
+        <relation name="tayseer_services_synthetic" table="[tayseer_services_synthetic.csv]" type="table">
+          <columns header="yes" separator="," locale="en_US">
+            <column name="month" datatype="date" ordinal="0"/>
+            <column name="region" datatype="string" ordinal="1"/>
+            <column name="service_category" datatype="string" ordinal="2"/>
+            <column name="channel" datatype="string" ordinal="3"/>
+            <column name="transactions" datatype="integer" ordinal="4"/>
+            <column name="unique_users" datatype="integer" ordinal="5"/>
+            <column name="digital_adoption_pct" datatype="real" ordinal="6"/>
+            <column name="csat" datatype="real" ordinal="7"/>
+            <column name="avg_completion_min" datatype="real" ordinal="8"/>
+            <column name="first_time_resolution_pct" datatype="real" ordinal="9"/>
+            <column name="cost_per_txn_sar" datatype="real" ordinal="10"/>
+            <column name="sla_breach_pct" datatype="real" ordinal="11"/>
+          </columns>
+        </relation>
+      </connection>
+      <aliases enabled="yes"/>
+      <column name="[month]" datatype="date" role="dimension" type="ordinal"/>
+      <column name="[region]" datatype="string" role="dimension" type="nominal"/>
+      <column name="[service_category]" datatype="string" role="dimension" type="nominal"/>
+      <column name="[channel]" datatype="string" role="dimension" type="nominal"/>
+      <column name="[transactions]" datatype="integer" role="measure" type="quantitative"/>
+      <column name="[unique_users]" datatype="integer" role="measure" type="quantitative"/>
+      <column name="[digital_adoption_pct]" datatype="real" role="measure" type="quantitative"/>
+      <column name="[csat]" datatype="real" role="measure" type="quantitative"/>
+      <column name="[avg_completion_min]" datatype="real" role="measure" type="quantitative"/>
+      <column name="[first_time_resolution_pct]" datatype="real" role="measure" type="quantitative"/>
+      <column name="[cost_per_txn_sar]" datatype="real" role="measure" type="quantitative"/>
+      <column name="[sla_breach_pct]" datatype="real" role="measure" type="quantitative"/>
+      <column name="[Latest Month]" datatype="date" role="dimension" type="ordinal">
+        <calculation class="tableau" formula="{ FIXED : MAX([month]) }"/>
+      </column>
+      <column name="[Latest Adoption]" datatype="real" role="measure" type="quantitative">
+        <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [digital_adoption_pct] END"/>
+      </column>
+      <column name="[Latest Transactions]" datatype="integer" role="measure" type="quantitative">
+        <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [transactions] END"/>
+      </column>
+      <column name="[Regional Adoption]" datatype="real" role="measure" type="quantitative">
+        <calculation class="tableau" formula="{ FIXED [region] : AVG([Latest Adoption]) }"/>
+      </column>
+      <column name="[Regional Transactions]" datatype="integer" role="measure" type="quantitative">
+        <calculation class="tableau" formula="{ FIXED [region] : SUM([Latest Transactions]) }"/>
+      </column>
+      <column name="[Gap pp]" datatype="real" role="measure" type="quantitative">
+        <calculation class="tableau" formula="MAX(65 - [Regional Adoption], 0)"/>
+      </column>
+      <column name="[Priority Index]" datatype="real" role="measure" type="quantitative">
+        <calculation class="tableau" formula="[Gap pp] / 100 * [Regional Transactions]"/>
+      </column>
+      <column name="[Target]" datatype="real" role="measure" type="quantitative">
+        <calculation class="tableau" formula="65"/>
+      </column>
+      <column name="[Pilot Region]" datatype="string" role="dimension" type="nominal">
+        <calculation class="tableau" formula="IF [region] = &quot;Najran&quot; OR [region] = &quot;Jazan&quot; OR [region] = &quot;Northern Borders&quot; THEN &quot;Pilot&quot; ELSE &quot;Other&quot; END"/>
+      </column>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="Latest national course index">
+      <table>
+        <view>
+          <datasources>
+            <datasource name="tayseer" caption="Tayseer synthetic training data"/>
+          </datasources>
+          <datasource-dependencies datasource="tayseer">
+            <column name="[month]" datatype="date" role="dimension" type="ordinal"/>
+            <column name="[region]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[service_category]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[channel]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[transactions]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[unique_users]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[digital_adoption_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[csat]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[avg_completion_min]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[first_time_resolution_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[cost_per_txn_sar]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[sla_breach_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[Latest Month]" datatype="date" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="{ FIXED : MAX([month]) }"/>
+            </column>
+            <column name="[Latest Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [digital_adoption_pct] END"/>
+            </column>
+            <column name="[Latest Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [transactions] END"/>
+            </column>
+            <column name="[Regional Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : AVG([Latest Adoption]) }"/>
+            </column>
+            <column name="[Regional Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : SUM([Latest Transactions]) }"/>
+            </column>
+            <column name="[Gap pp]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="MAX(65 - [Regional Adoption], 0)"/>
+            </column>
+            <column name="[Priority Index]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="[Gap pp] / 100 * [Regional Transactions]"/>
+            </column>
+            <column name="[Target]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="65"/>
+            </column>
+            <column name="[Pilot Region]" datatype="string" role="dimension" type="nominal">
+              <calculation class="tableau" formula="IF [region] = &quot;Najran&quot; OR [region] = &quot;Jazan&quot; OR [region] = &quot;Northern Borders&quot; THEN &quot;Pilot&quot; ELSE &quot;Other&quot; END"/>
+            </column>
+            <column-instance column="[Latest Adoption]" derivation="Avg" name="[avg:Latest Adoption:qk]" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <aggregation value="true"/>
+        </view>
+        <style/>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Text"/>
+            <encodings>
+              <text column="[tayseer].[avg:Latest Adoption:qk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="color" value="#087D82"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows/>
+        <cols/>
+      </table>
+      <simple-id uuid="{0C06538E-66C3-4A26-98AF-76CA69E6736D}"/>
+    </worksheet>
+    <worksheet name="National monthly adoption toward 65%">
+      <table>
+        <view>
+          <datasources>
+            <datasource name="tayseer" caption="Tayseer synthetic training data"/>
+          </datasources>
+          <datasource-dependencies datasource="tayseer">
+            <column name="[month]" datatype="date" role="dimension" type="ordinal"/>
+            <column name="[region]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[service_category]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[channel]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[transactions]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[unique_users]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[digital_adoption_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[csat]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[avg_completion_min]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[first_time_resolution_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[cost_per_txn_sar]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[sla_breach_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[Latest Month]" datatype="date" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="{ FIXED : MAX([month]) }"/>
+            </column>
+            <column name="[Latest Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [digital_adoption_pct] END"/>
+            </column>
+            <column name="[Latest Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [transactions] END"/>
+            </column>
+            <column name="[Regional Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : AVG([Latest Adoption]) }"/>
+            </column>
+            <column name="[Regional Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : SUM([Latest Transactions]) }"/>
+            </column>
+            <column name="[Gap pp]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="MAX(65 - [Regional Adoption], 0)"/>
+            </column>
+            <column name="[Priority Index]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="[Gap pp] / 100 * [Regional Transactions]"/>
+            </column>
+            <column name="[Target]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="65"/>
+            </column>
+            <column name="[Pilot Region]" datatype="string" role="dimension" type="nominal">
+              <calculation class="tableau" formula="IF [region] = &quot;Najran&quot; OR [region] = &quot;Jazan&quot; OR [region] = &quot;Northern Borders&quot; THEN &quot;Pilot&quot; ELSE &quot;Other&quot; END"/>
+            </column>
+            <column-instance column="[digital_adoption_pct]" derivation="Avg" name="[avg:digital_adoption_pct:qk]" pivot="key" type="quantitative"/>
+            <column-instance column="[month]" derivation="None" name="[none:month:qk]" pivot="key" type="quantitative"/>
+            <column-instance column="[Target]" derivation="Min" name="[min:Target:qk]" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <aggregation value="true"/>
+        </view>
+        <style/>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Line"/>
+            <encodings>
+              <text column="[tayseer].[avg:digital_adoption_pct:qk]"/>
+            </encodings>
+            <reference-line id="ref65" axis-column="[tayseer].[avg:digital_adoption_pct:qk]" value-column="[tayseer].[min:Target:qk]" scope="per-table" label-type="custom" label="65% target" z-order="1" formula="constant" value="65" enable-instant-analytics="true"/>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="color" value="#087D82"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[tayseer].[avg:digital_adoption_pct:qk]</rows>
+        <cols>[tayseer].[none:month:qk]</cols>
+      </table>
+      <simple-id uuid="{CF52E863-B63F-4792-B4B0-F10922249B8D}"/>
+    </worksheet>
+    <worksheet name="Regional adoption December 2025">
+      <table>
+        <view>
+          <datasources>
+            <datasource name="tayseer" caption="Tayseer synthetic training data"/>
+          </datasources>
+          <datasource-dependencies datasource="tayseer">
+            <column name="[month]" datatype="date" role="dimension" type="ordinal"/>
+            <column name="[region]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[service_category]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[channel]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[transactions]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[unique_users]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[digital_adoption_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[csat]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[avg_completion_min]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[first_time_resolution_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[cost_per_txn_sar]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[sla_breach_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[Latest Month]" datatype="date" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="{ FIXED : MAX([month]) }"/>
+            </column>
+            <column name="[Latest Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [digital_adoption_pct] END"/>
+            </column>
+            <column name="[Latest Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [transactions] END"/>
+            </column>
+            <column name="[Regional Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : AVG([Latest Adoption]) }"/>
+            </column>
+            <column name="[Regional Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : SUM([Latest Transactions]) }"/>
+            </column>
+            <column name="[Gap pp]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="MAX(65 - [Regional Adoption], 0)"/>
+            </column>
+            <column name="[Priority Index]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="[Gap pp] / 100 * [Regional Transactions]"/>
+            </column>
+            <column name="[Target]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="65"/>
+            </column>
+            <column name="[Pilot Region]" datatype="string" role="dimension" type="nominal">
+              <calculation class="tableau" formula="IF [region] = &quot;Najran&quot; OR [region] = &quot;Jazan&quot; OR [region] = &quot;Northern Borders&quot; THEN &quot;Pilot&quot; ELSE &quot;Other&quot; END"/>
+            </column>
+            <column-instance column="[Latest Adoption]" derivation="Avg" name="[avg:Latest Adoption:qk]" pivot="key" type="quantitative"/>
+            <column-instance column="[region]" derivation="None" name="[none:region:nk]" pivot="key" type="nominal"/>
+            <column-instance column="[Pilot Region]" derivation="None" name="[none:Pilot Region:nk]" pivot="key" type="nominal"/>
+            <column-instance column="[Target]" derivation="Min" name="[min:Target:qk]" pivot="key" type="quantitative"/>
+          </datasource-dependencies>
+          <computed-sort column="[tayseer].[none:region:nk]" direction="ASC" using="[tayseer].[avg:Latest Adoption:qk]"/>
+          <aggregation value="true"/>
+        </view>
+        <style/>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Bar"/>
+            <encodings>
+              <text column="[tayseer].[avg:Latest Adoption:qk]"/>
+              <color column="[tayseer].[none:Pilot Region:nk]"/>
+            </encodings>
+            <reference-line id="ref65" axis-column="[tayseer].[avg:Latest Adoption:qk]" value-column="[tayseer].[min:Target:qk]" scope="per-table" label-type="custom" label="65% target" z-order="1" formula="constant" value="65" enable-instant-analytics="true"/>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="color" value="#087D82"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[tayseer].[none:region:nk]</rows>
+        <cols>[tayseer].[avg:Latest Adoption:qk]</cols>
+      </table>
+      <simple-id uuid="{E023DEA9-DAB1-4C3D-B6D4-FD2C8E0AB98E}"/>
+    </worksheet>
+    <worksheet name="Gap and volume priority December 2025">
+      <table>
+        <view>
+          <datasources>
+            <datasource name="tayseer" caption="Tayseer synthetic training data"/>
+          </datasources>
+          <datasource-dependencies datasource="tayseer">
+            <column name="[month]" datatype="date" role="dimension" type="ordinal"/>
+            <column name="[region]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[service_category]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[channel]" datatype="string" role="dimension" type="nominal"/>
+            <column name="[transactions]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[unique_users]" datatype="integer" role="measure" type="quantitative"/>
+            <column name="[digital_adoption_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[csat]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[avg_completion_min]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[first_time_resolution_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[cost_per_txn_sar]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[sla_breach_pct]" datatype="real" role="measure" type="quantitative"/>
+            <column name="[Latest Month]" datatype="date" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="{ FIXED : MAX([month]) }"/>
+            </column>
+            <column name="[Latest Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [digital_adoption_pct] END"/>
+            </column>
+            <column name="[Latest Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="IF [month] = [Latest Month] THEN [transactions] END"/>
+            </column>
+            <column name="[Regional Adoption]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : AVG([Latest Adoption]) }"/>
+            </column>
+            <column name="[Regional Transactions]" datatype="integer" role="measure" type="quantitative">
+              <calculation class="tableau" formula="{ FIXED [region] : SUM([Latest Transactions]) }"/>
+            </column>
+            <column name="[Gap pp]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="MAX(65 - [Regional Adoption], 0)"/>
+            </column>
+            <column name="[Priority Index]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="[Gap pp] / 100 * [Regional Transactions]"/>
+            </column>
+            <column name="[Target]" datatype="real" role="measure" type="quantitative">
+              <calculation class="tableau" formula="65"/>
+            </column>
+            <column name="[Pilot Region]" datatype="string" role="dimension" type="nominal">
+              <calculation class="tableau" formula="IF [region] = &quot;Najran&quot; OR [region] = &quot;Jazan&quot; OR [region] = &quot;Northern Borders&quot; THEN &quot;Pilot&quot; ELSE &quot;Other&quot; END"/>
+            </column>
+            <column-instance column="[Priority Index]" derivation="Min" name="[min:Priority Index:qk]" pivot="key" type="quantitative"/>
+            <column-instance column="[region]" derivation="None" name="[none:region:nk]" pivot="key" type="nominal"/>
+            <column-instance column="[Pilot Region]" derivation="None" name="[none:Pilot Region:nk]" pivot="key" type="nominal"/>
+          </datasource-dependencies>
+          <computed-sort column="[tayseer].[none:region:nk]" direction="DESC" using="[tayseer].[min:Priority Index:qk]"/>
+          <aggregation value="true"/>
+        </view>
+        <style/>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Bar"/>
+            <encodings>
+              <text column="[tayseer].[min:Priority Index:qk]"/>
+              <color column="[tayseer].[none:Pilot Region:nk]"/>
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-labels-show" value="true"/>
+                <format attr="mark-labels-cull" value="true"/>
+                <format attr="color" value="#087D82"/>
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[tayseer].[none:region:nk]</rows>
+        <cols>[tayseer].[min:Priority Index:qk]</cols>
+      </table>
+      <simple-id uuid="{C1BDD3B4-70CC-410A-84A0-98747A215517}"/>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="Tayseer investment decision">
+      <style/>
+      <size maxheight="900" maxwidth="1400" minheight="900" minwidth="1400"/>
+      <zones is-pixels="true">
+        <zone id="1" x="20" y="10" w="1360" h="60" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="22" bold="true">Tayseer: phased SAR 40M investment toward 65% adoption</run>
+          </formatted-text>
+        </zone>
+        <zone id="2" x="20" y="90" w="300" h="180" name="Latest national course index" show-title="true"/>
+        <zone id="3" x="340" y="90" w="1040" h="260" name="National monthly adoption toward 65%" show-title="true"/>
+        <zone id="4" x="20" y="365" w="680" h="455" name="Regional adoption December 2025" show-title="true"/>
+        <zone id="5" x="720" y="365" w="660" h="350" name="Gap and volume priority December 2025" show-title="true"/>
+        <zone id="6" x="720" y="730" w="660" h="90" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="14" bold="true">Proposed SAR M: Najran 13; Jazan 11; Northern Borders 11; reserve 5. Release only 10M initially; review at day 90.</run>
+          </formatted-text>
+        </zone>
+        <zone id="7" x="20" y="835" w="1360" h="55" type-v2="text">
+          <formatted-text>
+            <run fontname="Arial" fontsize="12" bold="true">Synthetic training data. Arithmetic-mean course index. Priority = gap x transactions (proxy). Transaction weighting selects Al-Baha instead of Jazan. Agree the metric before scaling.</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid="{D2AD21A6-8207-4CC1-9B76-71C7833B9215}"/>
+    </dashboard>
+  </dashboards>
+  <thumbnails/>
+  <explain-data enabled-for-viewer="false" extreme-values-enabled-for-all="false">
+    <explanation-types/>
+  </explain-data>
+</workbook>

@@ -1,0 +1,8 @@
+.private/
+.codex-finalizer/
+node_modules/
+__pycache__/
+*.pyc
+~$*
+.chart-data-*/
+Tayseer_Capstone_Package.zip
