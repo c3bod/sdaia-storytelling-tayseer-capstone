@@ -1,5 +1,28 @@
 # Tayseer Digital Adoption Investment Story
 
+## ابدأ هنا — أين الشغل الفعلي وكيف أفتحه؟
+
+النتيجة الأساسية للمشروع **عرض تقديمي من سبع شرائح**، ومعه ملف Tableau والتحليل الذي يدعم الأرقام. ابدأ بالعرض:
+
+1. **[افتح العرض كـ PDF](deliverables/Tayseer_Executive_Story.pdf)** — لمشاهدة الشرائح. إذا لم تظهر المعاينة، نزّل الملف وافتحه في المتصفح أو قارئ PDF.
+2. **[نزّل العرض القابل للتعديل PowerPoint](deliverables/Tayseer_Executive_Story_Final.pptx)** — افتح رابط الملف، نزّله، ثم افتحه في PowerPoint. استخدمه أثناء التقديم ولتعديل الشرائح.
+3. **[اقرأ نص الإلقاء العربي](docs/PRESENTATION_SCRIPT_AR.md)** — ماذا يقول كل عضو عند كل شريحة، مع توزيع الوقت.
+4. **[نزّل ملف Tableau](tableau/Tayseer_Investment_Dashboard.twbx)** — يفتح داخل Tableau، والبيانات موجودة داخله. [دليل فتحه والتحقق من القيم](docs/TABLEAU_GUIDE.md). فتحه داخل البرنامج ما زال يحتاج التحقق.
+
+مشاهدة العرض والتقديم به لا تتطلب تشغيل Python. استخدم ملفات التحليل عندما تريد إعادة حساب الأرقام أو مراجعة كيفية الوصول إلى التوصية.
+
+| المجلد | محتواه | كيف تستخدمه؟ |
+|---|---|---|
+| `deliverables` | العرض النهائي بصيغتي PDF وPowerPoint | افتح PDF للمشاهدة، وPowerPoint للتقديم والتعديل |
+| `docs` | نص الإلقاء، الأسئلة، المنهجية ودليل التسليم | اقرأ الملفات مباشرة داخل GitHub |
+| `tableau` | الداشبورد وبياناته المرفقة | نزّل ملف TWBX وافتحه في Tableau |
+| `analysis` | دفتر التحليل والحسابات ونتائجها | شغّل دفتر IPYNB في Colab أو Jupyter عند الحاجة لإعادة الحساب |
+| `data` | البيانات الأصلية وقاموس الحقول | المصدر الذي اعتمدنا عليه في التحليل |
+
+لشرح تنزيل الحزمة كاملة وفتح كل نوع ملف، اقرأ [دليل البداية بالعربية](START_HERE_AR.md).
+
+---
+
 SDAIA Academy SDA-DSC-112 capstone in Data Visualization and Storytelling.
 
 **Decision:** approve a hypothetical SAR 40 million envelope to move lagging Tayseer regions toward 65% digital adoption. Release SAR 10M for initial pilots in Najran, Jazan and Northern Borders; hold SAR 30M subject to a day-90 review.
