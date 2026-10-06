@@ -7,13 +7,13 @@ The project recommends how to allocate a hypothetical **SAR 40 million** to move
 ## Open the completed work
 
 - **[View the seven-slide PDF](deliverables/Tayseer_Executive_Story.pdf)** — view the presentation or download it if the browser preview is unavailable.
-- **[Download the editable PowerPoint](deliverables/Tayseer_Executive_Story_Final.pptx)** — seven slides in simple English, with presenter notes on every slide.
+- **[Download the editable PowerPoint](deliverables/Tayseer_Executive_Story_Final.pptx)** — seven slides in simple English, with Arabic presenter notes on every slide.
 - **[Download the Tableau workbook](tableau/Tayseer_Investment_Dashboard.twbx)** — open the packaged file in Tableau. [Verification guide](docs/TABLEAU_GUIDE.md).
 - **[Open the analysis notebook](analysis/capstone_analysis.ipynb)** — inspect the calculations or run them in Colab/Jupyter.
 
 Viewing the PDF and presenting the PowerPoint do not require Python. [Opening instructions](START_HERE.md).
 
-In PowerPoint, use **Slide Show → Use Presenter View** with a separate audience display to see your notes while the audience sees only the slides. Read the **SAY** section; use **IF ASKED** for extra answers. The notes include the required questions, chart colors and the Al-Baha comparison.
+In PowerPoint, use **Slide Show → Use Presenter View** with a separate audience display to see your notes while the audience sees only the slides. Read the Arabic speaking section; use the extra answers when asked. The notes include the required questions, chart colors and the Al-Baha comparison.
 
 ## Project requirements
 
@@ -30,7 +30,7 @@ In PowerPoint, use **Slide Show → Use Presenter View** with a separate audienc
 
 ## Completed work
 
-- Prepared the seven-slide executive presentation in simple English, with speaking notes and answers inside each PowerPoint slide, and a matching PDF.
+- Prepared the seven-slide executive presentation in simple English, with Arabic speaking notes and answers inside each PowerPoint slide, and a matching PDF.
 - Analyzed 24,960 records across 48 months, 13 regions, eight services and five channels; checked the complete grid, missing cells and duplicate dimension keys.
 - Calculated the national trend, latest regional gaps and a gap × transaction-volume priority index.
 - Compared three funding options and proposed a staged SAR 40M envelope: Najran 13M, Jazan 11M, Northern Borders 11M and a 5M evaluation reserve.
