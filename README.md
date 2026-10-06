@@ -56,4 +56,4 @@ The executed notebook independently calculates the same results from the raw CSV
 
 The shared Tableau reference belongs to the project supplied by the user. We verified its embedded CSV and weighted calculation. Our packaged workbook adds a monthly trend and gap view from the same source; the published reference itself shows the December snapshot.
 
-Tools used: Python, pandas, NumPy, Plotly, PowerPoint and Tableau workbook XML. [SDAIA Academy on GitHub](https://github.com/SDAIA-Academy).
+Tools used: Python, pandas, NumPy, Plotly, PowerPoint and Tableau workbook XML. [SDAIA Academy on GitHub](https://github.com/SDAIAAcademy).
