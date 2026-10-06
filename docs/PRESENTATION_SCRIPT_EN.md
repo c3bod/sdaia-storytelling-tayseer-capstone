@@ -4,7 +4,7 @@ Use the slide deck as the main presentation. This is a rehearsal draft: test the
 
 ## Slide 1 — Abdulelah — 0:00–0:30
 
-We ask you to approve a 40-million-riyal funding envelope for Najran, Jazan and Northern Borders. Release ten million for initial pilots and hold thirty million for review. Our recommendation is to prioritize regions with substantial adoption gaps and activity, then test the intervention before scaling. The stakes are persistent regional gaps against the 65-percent course adoption target. The evidence comes from synthetic Tayseer training data.
+We ask you to approve a 40-million-riyal envelope for Najran, Jazan and Northern Borders. Authorize ten million for pilots after baseline approval; hold thirty million for review. We recommend targeting regions with substantial gaps and activity, then testing before scaling. The stakes are regional gaps against the 65-percent course target. These are synthetic training data.
 
 ## Slide 2 — Abdulelah — 0:30–1:15
 
@@ -16,15 +16,15 @@ Each horizontal bar shows a region's December 2025 arithmetic-mean adoption. Lon
 
 ## Slide 4 — Sanad — 2:00–4:00
 
-This table combines adoption, the gap to 65 in percentage points, and December transactions. Our priority index is the positive gap divided by one hundred, multiplied by transactions. It balances shortfall with activity; it does not estimate how many transactions will convert or the return on investment.
+Each bar ranks one of the nine lagging regions in December 2025. The horizontal axis runs from zero to six hundred priority-index units. Our index is the positive gap to 65 divided by one hundred, multiplied by December transactions. Teal highlights the proposed pilot regions; orange highlights Al-Baha. Longer bars mean greater priority under this rule. It balances shortfall with activity; it does not estimate how many transactions will convert or the return on investment.
 
 Najran combines a 6.11-point gap with 9,329 transactions. Jazan has a 4.34-point gap and 10,490 transactions. Northern Borders has a 4.09-point gap and 10,917 transactions. These three represent 42.61 percent of the priority index across lagging regions. That percentage refers to the index, not users or transactions.
 
-The choice depends on the metric. Weighting adoption by transactions selects Al-Baha instead of Jazan. It also gives a national index of 66.12 percent, above target. We keep the arithmetic-mean definition used in the course and disclose the alternative. Before scaling, the decision maker must agree the definition; changing it requires reranking and reallocating. The data also cannot establish why adoption is lower or which intervention works best. These limits support a pilot rather than a claim of proven returns. Hathal will compare the funding options.
+Third place is a near tie: Northern Borders scores 446.26 and Al-Baha 445.60, a difference of only 0.66 index units. The choice also depends on the metric. Weighting adoption by transactions selects Al-Baha instead of Jazan and gives a national index of 66.12 percent, above target. We retain the course definition and disclose the alternative. Before scaling, agree the definition and validate demand; a changed definition requires reranking and reallocating. The data cannot establish the cause of low adoption or which intervention works best. These limits support a pilot rather than a claim of proven returns. Hathal will compare the options.
 
 ## Slide 5 — Hathal — 4:00–5:00
 
-We compare three allocation policies. Equal funding gives approximately 4.44 million to each of the nine lagging regions, but does not account for different gaps and activity. Full concentration puts all forty million into the three current priorities, committing everything before testing. Staged funding reserves thirty-five million for the regions and five million for evaluation and reassessment. We recommend this third option: release ten million initially and hold thirty million subject to evidence. The dataset does not establish causal returns for any option.
+We compare three allocation policies. Equal funding divides forty million by nine, approximately 4.44 million each, but overlooks different gaps and activity. Full concentration commits forty million to three priorities before testing. Staged funding reserves thirty-five million for the regions and five million for reassessment. We recommend this third option: release ten million after baseline approval and hold thirty million for review. The dataset does not establish causal returns for any option.
 
 ## Slide 6 — Hathal — 5:00–6:15
 
@@ -34,4 +34,4 @@ The 64.45-percent figure is a conditional scenario. If all three regions reach 6
 
 ## Slide 7 — Hathal — 6:15–7:00
 
-Our closing ask is to approve forty million and release ten million for the pilots. Name an accountable owner at launch. Within thirty days, agree the metric, baseline, service plans and cost. At day ninety, review impact and cost before releasing further funding. A proposed continuation goal is an improvement of two percentage points in each pilot, with stable satisfaction and service performance and a defensible comparison. This is a management goal, not a prediction. If evidence is weak, pause later releases and revise the plan. Approve the envelope now, and scale only after the review.
+Approve forty million and authorize ten million after baseline approval. Name an owner now. Before any release or intervention, agree the metric, baseline, comparison, service plan and cost; validate the shortlist, then launch within thirty days if ready. At day ninety from approval, review impact and cost. Report the pilot's actual duration; extend the review if exposure is insufficient. The proposed goal is two percentage points per pilot, with stable satisfaction and service performance. This is a goal, not a prediction. If evidence is weak, pause later releases and revise the plan.

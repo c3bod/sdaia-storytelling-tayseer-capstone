@@ -8,6 +8,8 @@ The project interprets the supplied synthetic Tayseer data, compares funding opt
 
 ## Main deliverables
 
+**Release prerequisite:** agree the metric, measured baseline, comparison design, verified shortlist, service plans and costs before any pilot funding or intervention. Name an owner on approval Day 0; launch within 30 days only when ready. Day 90 is counted from envelope approval; report actual exposure and extend evaluation if insufficient.
+
 - [Seven-slide presentation](deliverables/Tayseer_Executive_Story_Final.pptx)
 - [Presentation PDF](deliverables/Tayseer_Executive_Story.pdf)
 - [Packaged Tableau workbook](tableau/Tayseer_Investment_Dashboard.twbx)
@@ -18,6 +20,7 @@ The project interprets the supplied synthetic Tayseer data, compares funding opt
 - [Method and limitations](docs/METHODOLOGY.md)
 - [Tableau opening and verification guide](docs/TABLEAU_GUIDE.md)
 - [Requirements traceability and remaining submission steps](docs/REQUIREMENTS_CHECKLIST.md)
+- [Independent review, provisional grading and corrections](docs/REVIEW_REPORT.md)
 
 ## Dashboard
 
@@ -46,6 +49,7 @@ Tools used: Python (pandas, numpy and lxml) for analysis and workbook authoring;
 ```text
 python -m pip install -r requirements.txt
 python analysis/analyze.py
+python analysis/validate_delivery.py
 ```
 
 The analysis writes the evidence CSVs and `analysis/summary.json`. Open the notebook for the calculations and interactive chart inspection. The Tableau builder requires the official XSD and namespace declarations when performing its optional structural validation; the packaged workbook is already supplied.
@@ -62,6 +66,8 @@ The analysis writes the evidence CSVs and `analysis/summary.json`. Open the note
 The academy GitHub organization was located independently. If the instructor specified a different SDAIA repository link, use that exact course link. The original course materials remain unchanged; they are not represented as team-authored content.
 
 ## Submission
+
+The evidence slide now ranks all nine lagging regions and annotates target gaps. Northern Borders and Al-Baha differ by only 0.66 priority-index units; this is a near tie, so third-place funding remains provisional pending verified demand and the agreed metric.
 
 Public repository: [c3bod/sdaia-storytelling-tayseer-capstone](https://github.com/c3bod/sdaia-storytelling-tayseer-capstone). [Submission details and final team handoff](docs/SUBMISSION_READY.md).
 

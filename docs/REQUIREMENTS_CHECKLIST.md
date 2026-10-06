@@ -10,7 +10,7 @@ Source: supplied StoryTelling_Capstone_Project_Requirements.docx. Instructions i
 | Slide 1 BLUF/ask, Student 1 | Abdulelah; funding ask and initial release |
 | Slide 2 situation, Student 1 | Abdulelah; 48-month national trend |
 | Slide 3 complication, Student 2 | Sanad; regional gap and target |
-| Slide 4 evidence, Student 2 | Sanad; gap × volume ranking and metric sensitivity |
+| Slide 4 evidence, Student 2 | Sanad; annotated chart ranking all nine laggards, target-gap annotations and near-tied third/fourth places. The chart is native PowerPoint from the source CSV; actual Tableau-export evidence remains outstanding |
 | Slide 5 options, Student 3 | Hathal; three allocation options |
 | Slide 6 recommendation/effect, Student 3 | Hathal; 13/11/11/5 allocation and conditional 64.45% scenario |
 | Slide 7 ask/next step, Student 3 | Hathal; repeated ask and day-90 checkpoint |

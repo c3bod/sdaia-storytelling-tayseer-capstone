@@ -20,6 +20,8 @@ The top three are Najran, Jazan and Northern Borders. Together they represent 42
 
 ## Metric sensitivity affects the decision
 
+The third and fourth course-definition scores are a near tie: Northern Borders 446.2596675 versus Al-Baha 445.6011875, only 0.65848 index units apart (about 0.15% of Al-Baha's score). This is a descriptive ranking difference, not a statistically established separation. Small measurement or definition changes can alter the selection. Funding remains provisional pending baseline and service-demand verification.
+
 As a sensitivity check, weight the supplied adoption percentages by transaction volume within each region. Then recalculate the same ranking. The resulting top three are Najran, Northern Borders and Al-Baha. The method changes both the overall national index and the third region selected. Weighting is an alternative definition of the index; neither index is a directly observed national digital-transaction share. The presentation uses the supplied lab definition consistently and discloses that Al-Baha replaces Jazan in the alternative ranking. The pilot must confirm the agreed metric and actual service-level demand before further releases. If the decision maker adopts the weighted definition, rerank and reallocate rather than keeping the current allocation.
 
 ## Allocation and alternatives
@@ -28,7 +30,7 @@ The weighted national December index is 66.118639%, above 65%, versus 63.328346%
 
 Three options are compared: equal allocation across nine lagging regions; concentration of the full SAR 40 million in the current top three; or staged funding of those three with an evaluation reserve. The recommendation is the staged option: Najran SAR 13M, Jazan SAR 11M, Northern Borders SAR 11M and SAR 5M retained for cross-region measurement and subsequent reassessment. The regional SAR 35M envelope is proportional to the three priority scores, rounded to whole millions using largest remainders. This is a proposed envelope, not an implementation cost estimate. It is not derived from regional population sizes or verified project quotations.
 
-Approve SAR 40M, initially release only SAR 10M for pilots across the three regions (approximately 3.72M, 3.14M, 3.14M), and hold SAR 30M. The SAR 25M remaining regional envelope and SAR 5M evaluation reserve are conditional on validated plans and the day-90 review. The exact procurement amounts depend on quotations and intervention design.
+Approve SAR 40M and authorize an initial SAR 10M for pilots (3.72M, 3.14M, 3.14M), conditional on approval of the metric, measured baseline, comparison design, verified shortlist, service plans and costs before any release or intervention. Appoint an accountable owner at approval; launch within 30 days only if these prerequisites are met. Hold SAR 30M. The remaining SAR 25M regional envelope and SAR 5M reserve depend on evidence and the day-90 review. Exact procurement amounts require quotations and intervention design.
 
 Candidate interventions include assisted digital onboarding and testing friction in high-volume services. These are hypotheses to test, not causes proven by this dataset. Evaluate service-level adoption and user feedback with a suitable comparison; descriptive correlations alone do not prove impact.
 
@@ -41,5 +43,7 @@ The deck includes a conditional scenario: if the three selected regional indices
 Day-90 continuation criteria are proposed management thresholds: at least +2 percentage points relative to the verified baseline in each pilot region, no deterioration in the matched service/customer satisfaction and SLA measures, a defensible comparison indicating improvement, and an accepted implementation cost. These are pilot goals, not model predictions. Changes in composition and seasonality must be checked.
 
 ## Reproduction
+
+Day 90 is counted from envelope approval, not assumed to mean 90 days of intervention. Record the actual launch date and exposure duration. Extend evaluation when exposure, comparison data or seasonal coverage is insufficient; the proposed +2pp goal does not justify attribution by itself.
 
 Run `python analysis/analyze.py` with pandas and numpy. It writes summary JSON and evidence CSVs. `analysis/capstone_analysis.ipynb` presents the same method for Colab/Jupyter. The Tableau workbook uses the same source CSV, date and arithmetic-mean definition. `docs/TABLEAU_GUIDE.md` describes how to inspect the workbook and verify the evidence in Tableau.

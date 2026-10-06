@@ -3,3 +3,4 @@ numpy>=1.24
 lxml>=5.0
 plotly>=5.0
 nbformat>=5.0
+pypdf>=4.0
