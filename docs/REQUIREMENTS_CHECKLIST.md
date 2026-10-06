@@ -1,29 +1,39 @@
-# Requirements traceability
+# Project requirements and completed work
 
-Source: supplied StoryTelling_Capstone_Project_Requirements.docx. Instructions in that document define the academic deliverable; the user's request authorizes preparing the capstone.
+Source: the supplied **StoryTelling Capstone Project Requirements** for SDAIA Academy SDA-DSC-112. Requirements below are distinguished from completed artifacts and checks that need external evidence or live execution.
 
-| Requirement | Evidence / status |
+## Story and presentation
+
+| Requirement | Completed work or verification status |
 |---|---|
-| SAR 40M decision, lagging regions toward 65% | Slides 1, 6 and 7; allocation sums to 40M |
-| Big Idea: point of view, stakes and action | Opening and scripts: prioritize three lagging regions with staged funding to reduce adoption gaps while testing effectiveness |
-| Exactly seven slides | Final PPTX and PDF each contain 7 |
-| Slide 1 BLUF/ask, Student 1 | Abdulelah; funding ask and initial release |
-| Slide 2 situation, Student 1 | Abdulelah; 48-month national trend |
-| Slide 3 complication, Student 2 | Sanad; regional gap and target |
-| Slide 4 evidence, Student 2 | Sanad; annotated chart ranking all nine laggards, target-gap annotations and near-tied third/fourth places. The chart is native PowerPoint from the source CSV; actual Tableau-export evidence remains outstanding |
-| Slide 5 options, Student 3 | Hathal; three allocation options |
-| Slide 6 recommendation/effect, Student 3 | Hathal; 13/11/11/5 allocation and conditional 64.45% scenario |
-| Slide 7 ask/next step, Student 3 | Hathal; repeated ask and day-90 checkpoint |
-| One main message and takeaway title each | Reviewed on all 7 slides |
-| Ask in first 30 seconds and repeated close | Both scripts; timed rehearsal remains necessary |
-| Group of 2–3, all participate, max 7 minutes | Three supplied members; seven-minute speaking plan; actual delivery not yet tested |
-| Day 2 Tableau dashboard as main evidence | Original Day 2 dashboard not supplied. Replacement TWB/TWBX prepared from course CSV and structurally validated; actual Tableau opening/calculation/visual verification remains outstanding |
-| Live Tableau as supplement/Q&A | Workbook and opening guide supplied; team must open and rehearse live |
-| Public GitHub, uploaded presentation, README/tools/dashboard | Public repository: https://github.com/c3bod/sdaia-storytelling-tayseer-capstone; presentation and supporting files included |
-| Group contributors and SDAIA GitHub link | Three confirmed profiles listed. Academy organization link independently verified; teammate access requires accepted invitations |
-| Submit repository URL through Google Form | Outstanding: instructor's form URL not supplied |
-| Chart orientation, uncertainty and Q&A | Scripts, method, metric sensitivity and QA_AR.md |
+| Recommend how to allocate SAR 40M toward the 65% adoption target | Staged investment case with transparent priority calculation, regional envelopes, reserve and funding prerequisites. No guaranteed impact is claimed. |
+| Big Idea: point of view, stakes and action | Target substantial adoption gaps and activity; test before scaling; disclose metric sensitivity and conditional funding. |
+| Exactly seven slides | Seven slides in the PowerPoint and seven pages in the PDF. |
+| Slide 1: BLUF and request | Funding request and phased release presented immediately. |
+| Slide 2: situation and national trend | Full monthly adoption trend, current position and explicit weighting sensitivity. |
+| Slide 3: regional complication | All 13 regional adoption values, target reference and nine lagging regions. |
+| Slide 4: annotated evidence | Priority chart for all nine laggards, target-gap inputs, selected index share, near-tie and metric limitations. Actual Day 2 Tableau evidence remains to be verified. |
+| Slide 5: options | Equal coverage, full concentration and staged funding compared. |
+| Slide 6: recommendation and expected effect | SAR 13M / 11M / 11M / 5M allocation and clearly conditional 64.45% national scenario. |
+| Slide 7: closing request and checkpoint | Repeat request; prerequisites before release; readiness within 30 days and review at day 90 from approval. |
+| One main message and takeaway title per slide | Implemented in the seven-slide story; final slides visually inspected. |
+| Clear chart orientation and honest encodings | Dates, units, zero-based bars, target references, annotations and synthetic-data disclosure included. |
+| Ask within the first 30 seconds and repeat at closing | Opening and closing scripts prepared. Actual timing requires rehearsal. |
+| Maximum seven-minute presentation | Script prepared; an actual timed rehearsal remains outstanding. |
+| Course group size of two to three; all participants contribute to the presentation | Course participation requirement recorded; actual participation is verified through delivery. |
 
-## Limits that must stay visible
+## Evidence, tools and submission
 
-Synthetic data; adoption is a course arithmetic-mean index; priority is a proxy. Transaction weighting changes national target status and one selected region. Budget amounts are proposed envelopes. The data cannot predict the investment's causal effect. +2pp is a proposed management threshold; 64.45% is conditional arithmetic. Structural Tableau validation does not establish working live evidence.
+| Requirement | Completed work or verification status |
+|---|---|
+| Day 2 Tableau dashboard as the main evidence source | Original dashboard not supplied. A reconstructed workbook is provided; required alignment or instructor acceptance remains pending. |
+| Live Tableau for supporting evidence and Q&A | Four worksheets and one dashboard packaged. Actual application opening and visual verification remain outstanding. |
+| Reliable analysis | Source-grid and hash checks; independent executed notebook; priorities, budgets and scenarios reconciled. |
+| Public GitHub repository | [Repository published](https://github.com/c3bod/sdaia-storytelling-tayseer-capstone). |
+| Presentation and supporting work in the repository | PowerPoint, PDF, Tableau package, notebook, source data, analysis outputs and English documentation included. |
+| README explaining the work and tools | README links directly to deliverables and explains requirements, completed work, Python, PowerPoint and Tableau. |
+| Required repository contributors | Verify course-required configuration before final submission. |
+| SDAIA Academy GitHub link | [SDAIA Academy](https://github.com/SDAIA-Academy) linked in the README. |
+| Submit the repository URL using the instructor's Google Form | Form URL not supplied; submission remains outstanding. |
+
+See [submission status](SUBMISSION_READY.md) and [delivery checks](VALIDATION.md). The completed artifacts do not establish causal investment effectiveness, live Tableau execution or completion of the external submission process.

@@ -91,7 +91,7 @@ codes=[c for c in nb['cells'] if c['cell_type']=='code']
 assert len(codes)==7 and all(c['execution_count'] for c in codes)
 assert not any(o['output_type']=='error' for c in codes for o in c['outputs'])
 print('Notebook: seven executed cells without recorded errors: PASS')
-for path in [ROOT/'README.md',ROOT/'START_HERE_AR.md',*list((ROOT/'docs').glob('*.md'))]:
+for path in [ROOT/'README.md',ROOT/'START_HERE.md',*list((ROOT/'docs').glob('*.md'))]:
     for ref in re.findall(r'\]\(([^)]+)\)',path.read_text(encoding='utf-8')):
         if re.match(r'https?://',ref): continue
         assert (path.parent/ref.split('#')[0]).exists(),(str(path),ref)

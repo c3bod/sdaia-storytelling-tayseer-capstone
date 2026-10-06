@@ -10,6 +10,6 @@ Checked on 2026-10-06.
 - Tableau package: four worksheets, one dashboard; packaged CSV matches the source SHA. Official Tableau 2026.1 XSD passed using local namespace-import declarations. No actual Tableau application opening, calculation execution or visual verification was performed.
 - All local delivery links in README, start guide and documentation resolve.
 
-These checks support the prepared artifacts; they do not establish investment effectiveness or successful live Tableau execution. Timed team rehearsal, Tableau opening verification and the instructor's Google Form submission remain outstanding.
+These checks support the prepared artifacts; they do not establish investment effectiveness or successful live Tableau execution. Timed presentation rehearsal, Tableau opening verification and the instructor's Google Form submission remain outstanding.
 
 See [independent review and correction report](REVIEW_REPORT.md). Reproduce the package checks with `python analysis/validate_delivery.py`.

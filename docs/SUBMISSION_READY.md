@@ -1,23 +1,31 @@
-# رابط التسليم وخطوات الفريق
+# Submission status
 
-رابط المستودع العام:
+## Required deliverables
 
-https://github.com/c3bod/sdaia-storytelling-tayseer-capstone
+The course asks for a seven-slide investment story allocating SAR 40M toward the 65% adoption target, a Big Idea with a point of view, stakes and action, an explicit request within the first 30 seconds and at closing, a presentation of at most seven minutes, Tableau evidence, and a public GitHub repository. The README must identify the work and tools and link to SDAIA Academy. Repository contributor configuration and Google Form submission are also required.
 
-## معلومات جاهزة للنموذج
+## Completed artifacts
 
-- المشروع: Tayseer Digital Adoption Investment Story
-- الأكاديمية: SDAIA Academy — SDA-DSC-112
-- الأعضاء: Abdulelah (@c3bod)، Sanad (@SanadAlkhamali)، Hathal (@1Hathall)
-- الملفات: عرض من سبع شرائح، PDF، تحليل قابل للتشغيل، ملف Tableau والبيانات، README ودليل المنهجية والإلقاء.
+| Item | Completed work |
+|---|---|
+| Presentation | [Editable seven-slide PowerPoint](../deliverables/Tayseer_Executive_Story_Final.pptx) with native charts, tables and English speaking notes. |
+| Reading copy | [Seven-page PDF](../deliverables/Tayseer_Executive_Story.pdf), generated from the reviewed PowerPoint renders. |
+| Source checks | Complete 24,960-row grid, no missing values or duplicate dimension keys; source hash recorded. |
+| Analysis | Monthly trend, regional gaps, transparent priority rule, weighting sensitivity, near-tie disclosure and conditional scenario. |
+| Investment case | SAR 13M / 11M / 11M regional envelopes plus SAR 5M reserve; conditional initial SAR 10M release and SAR 30M hold. |
+| Tableau reconstruction | [Packaged workbook](../tableau/Tayseer_Investment_Dashboard.twbx), four worksheets and one dashboard; source inclusion and XML schema validated. |
+| Reproduction | [Executed notebook](../analysis/capstone_analysis.ipynb), analysis outputs and delivery validator. |
+| Documentation | English [script](PRESENTATION_SCRIPT.md), [Q&A](QA.md), [dictionary](../data/DATA_DICTIONARY.md), [methodology](METHODOLOGY.md), [opening guide](../START_HERE.md), requirements and review reports. |
+| Publication | Public [GitHub repository](https://github.com/c3bod/sdaia-storytelling-tayseer-capstone) with a README and direct deliverable links. |
 
-## المتبقي قبل التسليم
+## Outstanding course checks
 
-| الخطوة | المسؤول المقترح | الاعتماد المطلوب |
-|---|---|---|
-| فتح Tableau ومقارنة القيم والمظهر بدليل التحقق | Sanad مع مراجعة الفريق | يتطلب Tableau؛ الفحص الهيكلي وحده لا يكفي |
-| التدريب بمؤقت والإلقاء في سبع دقائق | جميع الأعضاء | استيعاب الأدلة والقيود، وتجربة التسليم بين المتحدثين |
-| قبول دعوة المستودع المتبقية | Hathal | Sanad لديه صلاحية كتابة؛ دعوة Hathal ما زالت معلقة في الفحص الأخير |
-| إرسال رابط المستودع في Google Form | Abdulelah | الحصول على رابط نموذج المدرّب والتحقق من متطلبات حقوله |
+| Check | Current limitation and required completion |
+|---|---|
+| Day 2 evidence | The original required dashboard was not supplied. Match it or confirm acceptance of the reconstruction. |
+| Actual Tableau execution | Open the workbook in Tableau and reconcile its values, calculations and display using the [guide](TABLEAU_GUIDE.md). XML validation does not establish successful live execution. |
+| Presentation rehearsal | Verify the seven-minute limit, the opening request within 30 seconds and the repeated closing request through an actual rehearsal. |
+| Contributor configuration | Verify the course-required repository contributor configuration before submission. |
+| Google Form | The instructor's form URL is absent from the supplied material. Submit the repository URL once that form is available. |
 
-هذه مهام مقترحة وليست ادعاءً بإنجاز الفريق لها. لم يُرسل نموذج Google لأن رابطه غير موجود. المتطلبات تنص على أدلة داشبورد Day 2؛ يجب مطابقتها أو الحصول على اعتماد المدرّب للبديل، ثم تصدير الرسم المعلق من Tableau للشريحة الرابعة. المرفق الحالي بُني من CSV ولم يُفتح داخل Tableau.
+Prepared files and automated checks are complete as documented. Final course submission remains pending the checks above. All data and findings are based on the supplied synthetic training dataset.

@@ -1,73 +1,67 @@
 # Tayseer Digital Adoption Investment Story
 
-## ابدأ هنا — أين الشغل الفعلي وكيف أفتحه؟
-
-النتيجة الأساسية للمشروع **عرض تقديمي من سبع شرائح**، ومعه ملف Tableau والتحليل الذي يدعم الأرقام. ابدأ بالعرض:
-
-1. **[افتح العرض كـ PDF](deliverables/Tayseer_Executive_Story.pdf)** — لمشاهدة الشرائح. إذا لم تظهر المعاينة، نزّل الملف وافتحه في المتصفح أو قارئ PDF.
-2. **[نزّل العرض القابل للتعديل PowerPoint](deliverables/Tayseer_Executive_Story_Final.pptx)** — افتح رابط الملف، نزّله، ثم افتحه في PowerPoint. استخدمه أثناء التقديم ولتعديل الشرائح.
-3. **[اقرأ نص الإلقاء العربي](docs/PRESENTATION_SCRIPT_AR.md)** — ماذا يقول كل عضو عند كل شريحة، مع توزيع الوقت.
-4. **[نزّل ملف Tableau](tableau/Tayseer_Investment_Dashboard.twbx)** — يفتح داخل Tableau، والبيانات موجودة داخله. [دليل فتحه والتحقق من القيم](docs/TABLEAU_GUIDE.md). فتحه داخل البرنامج ما زال يحتاج التحقق.
-
-مشاهدة العرض والتقديم به لا تتطلب تشغيل Python. استخدم ملفات التحليل عندما تريد إعادة حساب الأرقام أو مراجعة كيفية الوصول إلى التوصية.
-
-| المجلد | محتواه | كيف تستخدمه؟ |
-|---|---|---|
-| `deliverables` | العرض النهائي بصيغتي PDF وPowerPoint | افتح PDF للمشاهدة، وPowerPoint للتقديم والتعديل |
-| `docs` | نص الإلقاء، الأسئلة، المنهجية ودليل التسليم | اقرأ الملفات مباشرة داخل GitHub |
-| `tableau` | الداشبورد وبياناته المرفقة | نزّل ملف TWBX وافتحه في Tableau |
-| `analysis` | دفتر التحليل والحسابات ونتائجها | شغّل دفتر IPYNB في Colab أو Jupyter عند الحاجة لإعادة الحساب |
-| `data` | البيانات الأصلية وقاموس الحقول | المصدر الذي اعتمدنا عليه في التحليل |
-
-لشرح تنزيل الحزمة كاملة وفتح كل نوع ملف، اقرأ [دليل البداية بالعربية](START_HERE_AR.md).
-
----
-
 SDAIA Academy SDA-DSC-112 capstone in Data Visualization and Storytelling.
 
-**Decision:** approve a hypothetical SAR 40 million envelope to move lagging Tayseer regions toward 65% digital adoption. Release SAR 10M for initial pilots in Najran, Jazan and Northern Borders; hold SAR 30M subject to a day-90 review.
+The project recommends how to allocate a hypothetical **SAR 40 million** to move lagging Tayseer regions toward the **65% digital-adoption target**, using the supplied synthetic course data.
 
-The project interprets the supplied synthetic Tayseer data, compares funding options and presents one seven-slide executive narrative. December 2025 national course adoption is **63.33%**; **9 of 13** regions are below target. The recommended envelope is **Najran 13M, Jazan 11M, Northern Borders 11M, evaluation reserve 5M**. These are proposed allocations, not quoted implementation costs or proven returns.
+## Open the completed work
 
-## Main deliverables
+- **[View the seven-slide PDF](deliverables/Tayseer_Executive_Story.pdf)** — view the presentation or download it if the browser preview is unavailable.
+- **[Download the editable PowerPoint](deliverables/Tayseer_Executive_Story_Final.pptx)** — download and open it in PowerPoint for presentation or editing.
+- **[Download the Tableau workbook](tableau/Tayseer_Investment_Dashboard.twbx)** — open the packaged file in Tableau. [Verification guide](docs/TABLEAU_GUIDE.md).
+- **[Open the analysis notebook](analysis/capstone_analysis.ipynb)** — inspect the calculations or run them in Colab/Jupyter.
 
-**Release prerequisite:** agree the metric, measured baseline, comparison design, verified shortlist, service plans and costs before any pilot funding or intervention. Name an owner on approval Day 0; launch within 30 days only when ready. Day 90 is counted from envelope approval; report actual exposure and extend evaluation if insufficient.
+Viewing the PDF and presenting the PowerPoint do not require Python. [Opening instructions](START_HERE.md).
 
-- [Seven-slide presentation](deliverables/Tayseer_Executive_Story_Final.pptx)
-- [Presentation PDF](deliverables/Tayseer_Executive_Story.pdf)
-- [Packaged Tableau workbook](tableau/Tayseer_Investment_Dashboard.twbx)
-- [Arabic speaking script and handoffs](docs/PRESENTATION_SCRIPT_AR.md)
-- [English speaking script](docs/PRESENTATION_SCRIPT_EN.md)
-- [Q&A preparation in Arabic](docs/QA_AR.md)
-- [Reproducible analysis notebook](analysis/capstone_analysis.ipynb)
-- [Method and limitations](docs/METHODOLOGY.md)
-- [Tableau opening and verification guide](docs/TABLEAU_GUIDE.md)
-- [Requirements traceability and remaining submission steps](docs/REQUIREMENTS_CHECKLIST.md)
-- [Independent review, provisional grading and corrections](docs/REVIEW_REPORT.md)
+## Project requirements
 
-## Dashboard
+- Recommend an allocation of SAR 40M toward the 65% adoption target.
+- Produce exactly seven slides: BLUF/Ask, Situation, Complication, Evidence, Options, Recommendation, and Ask + Next Step.
+- Use one main message and a takeaway title on each slide.
+- State a Big Idea combining point of view, stakes and action.
+- State the ask within the first 30 seconds and repeat it at the close; keep the presentation within seven minutes.
+- Use the Day 2 Tableau dashboard as the main evidence source, with live Tableau available for supporting evidence and Q&A.
+- Publish the presentation in a public GitHub repository with a README describing the project, dashboard and tools, the required contributor configuration and a SDAIA GitHub link.
+- Submit the public repository URL through the instructor's Google Form.
 
-`tableau/Tayseer_Investment_Dashboard.twbx` packages the original CSV with a Tableau 2026.1 workbook. It contains the latest national KPI, the 48-month national trend with a 65% reference, latest regional adoption with a target reference, and the gap × activity priority ranking. The dashboard also states the proposed allocation and metric sensitivity.
+[Detailed requirements and completion status](docs/REQUIREMENTS_CHECKLIST.md).
 
-The source grid contains 24,960 records: 48 months × 13 regions × 8 services × 5 channels. Structural checks found no missing cells or duplicate dimension keys. The main metric is the arithmetic mean of `digital_adoption_pct`, matching the supplied labs. It is a course index, not a directly observed digital-transactions share. Priority combines the positive target gap with December transaction volume.
+## Completed work
 
-**Material uncertainty:** transaction weighting gives a national index of **66.12%**, above 65%, and selects Al-Baha instead of Jazan in the top three. Target status and the third priority therefore depend on the metric definition. The recommendation requires the decision maker to agree the metric before later releases. No investment-response model is supplied. If the three selected regions each reach 65% and other regions stay unchanged, the national course index reaches only **64.45%**. This is a conditional scenario, not an investment forecast.
+- Prepared the seven-slide executive presentation in editable PowerPoint and PDF.
+- Analyzed 24,960 records across 48 months, 13 regions, eight services and five channels; checked the complete grid, missing cells and duplicate dimension keys.
+- Calculated the national trend, latest regional gaps and a gap × transaction-volume priority index.
+- Compared three funding options and proposed a staged SAR 40M envelope: Najran 13M, Jazan 11M, Northern Borders 11M and a 5M evaluation reserve.
+- Specified an initial 10M pilot authorization, conditional on approved metric, baseline, comparison design, verified shortlist, service plans and costs before any funding release or intervention. Hold 30M for review.
+- Disclosed metric sensitivity, the near tie between Northern Borders and Al-Baha, and the limits of the conditional national scenario.
+- Prepared a Tableau TWB/TWBX package with four worksheets, one dashboard and the original CSV; passed structural schema and source-package checks.
+- Prepared and executed a reproducible notebook, English presentation script, Q&A notes, data dictionary, methodology and opening guide.
+- Checked all four embedded chart series against source calculations, verified the package and budget totals, and visually inspected the final slides and PDF pages.
+- Published the presentation and supporting files in this public repository.
 
-**Tableau validation status:** the workbook passes the official Tableau 2026.1 structural XSD, with local declarations for its unlocated namespace imports. The package contains the original CSV and valid relative file paths. Tableau is not installed in the authoring environment, so opening, visual behavior and calculation execution in Tableau have **not** been verified. Open the workbook using the guide and compare its values with the provided evidence before treating it as final Tableau evidence. XSD validation does not guarantee semantic compatibility.
+## Findings and limitations
 
-## Team and presentation
+December 2025 adoption is **63.33%** under the course arithmetic-mean definition, with **nine of thirteen regions** below 65%. The proposed three regions represent **42.61%** of the laggards' gap × volume index. Northern Borders and Al-Baha are separated by only **0.66 index units**.
 
-| Team member | GitHub | Speaking role | Time |
-|---|---|---|---|
-| Abdulelah | [@c3bod](https://github.com/c3bod) | Slides 1–2: opening and national situation | 0:00–1:15 |
-| Sanad | [@SanadAlkhamali](https://github.com/SanadAlkhamali) | Slides 3–4: regional gap and evidence | 1:15–4:00 |
-| Hathal | [@1Hathall](https://github.com/1Hathall) | Slides 5–7: options, recommendation and close | 4:00–7:00 |
+Transaction weighting gives a national index of **66.12%**, above target, and selects Al-Baha instead of Jazan. Agree the metric before releasing pilot funding; a changed definition requires reranking and reallocating. Neither index is a verified digital-transactions share.
 
-These are speaking assignments, not claims about independently completed analytical contributions. All members should rehearse together. State the ask within 30 seconds, repeat it at the close and keep the total presentation within 7 minutes. Use the live Tableau dashboard for supporting evidence and Q&A; the seven slides remain the main presentation.
+If the three selected regions each reach 65% and other regions remain unchanged, the national course index reaches **64.45%**. This is conditional arithmetic, not an investment forecast. Funding amounts are proposed envelopes, not verified implementation costs. All observations are synthetic training data.
+
+The original Day 2 dashboard was not supplied. The replacement was built from the course CSV and structurally validated, but it has **not been opened or executed in Tableau**. Day 2 evidence alignment, actual Tableau verification/export, timed rehearsal, final contributor verification and Google Form submission remain outstanding. The form URL was not supplied.
+
+## Supporting documentation
+
+- [English presentation script](docs/PRESENTATION_SCRIPT.md)
+- [Q&A notes](docs/QA.md)
+- [Methodology](docs/METHODOLOGY.md)
+- [Data dictionary](data/DATA_DICTIONARY.md)
+- [Verification record](docs/VALIDATION.md)
+- [Independent review and corrections](docs/REVIEW_REPORT.md)
+- [Submission requirements and status](docs/SUBMISSION_READY.md)
 
 ## Tools and reproduction
 
-Tools used: Python (pandas, numpy and lxml) for analysis and workbook authoring; Jupyter/Colab notebook; Tableau TWB/TWBX format; editable PowerPoint tables and charts; PDF export; Git and GitHub. Codex assisted analysis, writing and artifact generation. The team must review the reasoning and deliver the presentation in its own words.
+Tools: Python with pandas, numpy and lxml; Colab/Jupyter and Plotly; Tableau TWB/TWBX format; editable PowerPoint charts and tables; PDF export; Git and GitHub. Codex assisted the analysis, writing and artifact generation.
 
 ```text
 python -m pip install -r requirements.txt
@@ -75,25 +69,14 @@ python analysis/analyze.py
 python analysis/validate_delivery.py
 ```
 
-The analysis writes the evidence CSVs and `analysis/summary.json`. Open the notebook for the calculations and interactive chart inspection. The Tableau builder requires the official XSD and namespace declarations when performing its optional structural validation; the packaged workbook is already supplied.
+The analysis produces evidence CSVs and summary JSON. Validation checks calculations, native chart data, presentation structure, budgets, the packaged source, notebook outputs and local documentation links. It does not execute Tableau or assess live delivery.
 
-## Sources and academy link
+## Sources
 
 - [SDAIA Academy on GitHub](https://github.com/SDAIAAcademy)
 - [Supplied synthetic CSV](https://drive.google.com/file/d/1T6pweFV4EjBxZ75gge775OOYMYx2aKX0/view)
-- [Supplied data dictionary](https://drive.google.com/file/d/1htqVTYconACXDD28CACXOpz8VAyz8Xm5/view)
+- [Supplied dictionary](https://drive.google.com/file/d/1htqVTYconACXDD28CACXOpz8VAyz8Xm5/view)
 - [Supplied Lab 2 calculation reference](https://drive.google.com/file/d/1_DAzbKnnIl4dn1JN2hffwhCueJOoqPOh/view)
-- [Tableau official document schemas](https://github.com/tableau/tableau-document-schemas)
-- [Tableau packaged workbook documentation](https://help.tableau.com/current/pro/desktop/en-us/save_savework_packagedworkbooks.htm)
+- [Official Tableau document schemas](https://github.com/tableau/tableau-document-schemas)
 
-The academy GitHub organization was located independently. If the instructor specified a different SDAIA repository link, use that exact course link. The original course materials remain unchanged; they are not represented as team-authored content.
-
-## Submission
-
-The evidence slide now ranks all nine lagging regions and annotates target gaps. Northern Borders and Al-Baha differ by only 0.66 priority-index units; this is a near tie, so third-place funding remains provisional pending verified demand and the agreed metric.
-
-Public repository: [c3bod/sdaia-storytelling-tayseer-capstone](https://github.com/c3bod/sdaia-storytelling-tayseer-capstone). [Submission details and final team handoff](docs/SUBMISSION_READY.md).
-
-Write-access invitations were issued on 2026-10-06. The final access check confirms `SanadAlkhamali` has write access; `1Hathall` still has a pending invitation. Access and invitations do not imply completed analytical contributions.
-
-Copy this public repository URL into the instructor's Google Form. The form URL has not been supplied, so form submission remains outstanding. Collaborator invitations must be accepted by teammates before access is active. Tableau opening/visual verification and a timed team rehearsal remain necessary before final submission.
+The academy link was located independently; use the exact instructor-specified course link if supplied separately. Original course files are preserved unchanged outside the published deliverables.

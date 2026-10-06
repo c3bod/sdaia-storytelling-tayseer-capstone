@@ -1,57 +1,48 @@
-# دليل Tableau والتحقق من الأدلة
+# Tableau workbook guide
 
-## حالة الملف
+## Workbook status
 
-ملف `tableau/Tayseer_Investment_Dashboard.twbx` يحتوي المصنف والبيانات الأصلية. صيغته Tableau 2026.1، وفُحص هيكله مقابل مخطط XSD الرسمي مع تعريفات محلية للاستيرادات غير المحددة المسار. نجح الفحص الهيكلي. لم يتم فتح الملف أو اختبار حساباته بصريًا داخل Tableau؛ البرنامج غير مثبت في بيئة التجهيز. الفحص الهيكلي لا يثبت توافق التنفيذ.
+The [packaged workbook](../tableau/Tayseer_Investment_Dashboard.twbx) was reconstructed from the supplied CSV. It contains four worksheets and one dashboard named **Tayseer investment decision**. The package includes its data, and its workbook XML passes the official Tableau 2026.1 schema with local namespace-import declarations.
 
-المتطلبات تنص على استخدام داشبورد Day 2 بوصفه مصدر الأدلة الرئيسي. المرفق بُني من CSV، والداشبورد الأصلي لم يُرسل. لذلك المطابقة مع داشبورد Day 2 أو اعتماد المدرّب للبديل خطوة غير منجزة. الرسوم القابلة للتحرير في PowerPoint تستخدم حسابات المصدر، لكنها ليست لقطات Tableau؛ ويلزم تصدير الرسم المعلق للشريحة الرابعة من Tableau بعد التحقق.
+Actual application opening, calculation execution and visual inspection in Tableau remain unverified. The course requests the Day 2 dashboard as the main evidence source; that original dashboard was not supplied. Confirm that requirement or obtain acceptance of this reconstruction before submission. The presentation's editable charts reproduce the data calculations; they are not screenshots exported from Tableau.
 
-## الفتح
+## Open and verify
 
-1. استخدم Tableau Desktop أو Tableau Public 2026.1 أو إصدارًا أحدث متوافقًا، ثم افتح TWBX.
-2. إذا احتاج الاتصال إصلاحًا، أعد ربطه بـ `data/tayseer_services_synthetic.csv`. ملف TWB غير المضغوط له نسخة بيانات بجواره في `tableau/Data/`.
-3. افتح لوحة `Tayseer investment decision` والأوراق الأربع.
-4. تحقق من قراءة `month` كتاريخ ومن بقاء قيم التبني على مقياس 0–100؛ لا تستخدم تنسيق النسبة الذي يضرب القيمة في 100.
-5. تحقق من المحور الصفري للأعمدة، ومرجع 65، وترتيب المناطق، وعدم قص العناوين. قارن القيم بالجدول أدناه قبل اعتماد الملف.
+1. Download `Tayseer_Investment_Dashboard.twbx` from GitHub using **Download raw file**.
+2. Open it in Tableau Desktop or Tableau Public 2026.1, or a compatible newer version.
+3. If the connection needs repair, point it to [the included CSV](../tableau/Data/tayseer_services_synthetic.csv).
+4. Open **Tayseer investment decision** and inspect all four worksheets.
+5. Confirm that `month` is a date, percentages use the supplied 0–100 scale, region names are readable and the reference target is 65. Avoid a percentage format that turns 65 into 6,500%.
+6. Reconcile the displayed results against the table below. Check bars start at zero, labels do not clip and the monthly trend retains all 48 months.
+7. If the instructor requires an actual Tableau export in the deck, export the verified view and annotate it while preserving the seven-slide story.
 
-## قيم مرجعية
+## Expected values
 
-| القياس | القيمة المطلوبة |
+| Check | Expected result |
 |---|---|
-| السجلات | 24,960 |
-| آخر شهر | ديسمبر 2025 |
-| المتوسط الوطني يناير 2022 | 51.402423% |
-| المتوسط الوطني ديسمبر 2025 | 63.328346% |
-| المناطق دون 65 | 9 من 13 |
-| نجران | 58.88875%؛ 9,329 معاملة |
-| جازان | 60.66175%؛ 10,490 معاملة |
-| الحدود الشمالية | 60.91225%؛ 10,917 معاملة |
-| حصة المناطق الثلاث من مؤشر الأولوية | 42.614613% |
-| المتوسط الوطني المرجح بالمعاملات | 66.118639% |
+| Source size | 24,960 rows, 12 columns |
+| Latest month | December 2025 |
+| January 2022 national course index | 51.402423% |
+| December 2025 national course index | 63.328346% |
+| Regions below 65% in December | 9 of 13 |
+| Najran adoption / transactions / priority | 58.88875% / 9,329 / 570.1185125 |
+| Jazan adoption / transactions / priority | 60.66175% / 10,490 / 455.082425 |
+| Northern Borders adoption / transactions / priority | 60.91225% / 10,917 / 446.2596675 |
+| Al-Baha priority | 445.6011875 |
+| Selected share of laggard priority index | 42.614613% |
+| Transaction-weighted national sensitivity | 66.118639% |
 
-مراجع المقارنة الكاملة: `analysis/national_trend.csv` و`analysis/regional_priorities.csv` و`analysis/summary.json`.
+The third/fourth difference is approximately 0.66 priority units. Transaction weighting changes the shortlist to Najran, Northern Borders and Al-Baha. Neither result is a causal estimate.
 
-## حسابات الأوراق أو إعادة البناء عند الحاجة
+## Calculations and aggregation
 
-أنشئ هذه الحقول إذا احتاج المصنف إصلاحًا أو أردت إعادة بناء الأوراق من المصدر. الأسماء أدناه وصفية، وقد يختلف الاسم الداخلي في المصنف:
+The workbook uses the latest month from `{ FIXED : MAX([month]) }`. Latest-month adoption and transaction fields return their source values for that month and null otherwise.
 
-```text
-Latest Month = { FIXED : MAX([month]) }
-Latest Adoption = IF [month] = [Latest Month] THEN [digital_adoption_pct] END
-Latest Transactions = IF [month] = [Latest Month] THEN [transactions] END
-Regional Adoption = { FIXED [region] : AVG([Latest Adoption]) }
-Regional Transactions = { FIXED [region] : SUM([Latest Transactions]) }
-Gap pp = MAX(65 - [Regional Adoption], 0)
-Priority Index = [Gap pp] / 100 * [Regional Transactions]
-```
+- **Regional adoption:** fixed-region arithmetic mean of latest-month adoption.
+- **Regional transactions:** fixed-region sum of latest-month transactions.
+- **Target gap:** `MAX(65 - [Regional adoption], 0)`.
+- **Priority index:** `[Target gap] / 100 * [Regional transactions]`.
 
-- بطاقة وطنية: `AVG(Latest Adoption)`؛ لا تجمع النسب.
-- اتجاه شهري: month ثم `AVG(digital_adoption_pct)`، جميع الأشهر، مع خط مرجعي 65.
-- أعمدة مناطق: region ثم `AVG(Latest Adoption)`، ترتيب تصاعدي، محور يبدأ من صفر وخط 65.
-- أولوية: region ثم `MIN(Priority Index)`، ترتيب تنازلي. تجنب SUM لأنه يجمع تكرارات قيمة LOD عبر الصفوف.
+The four worksheets show the national latest-month KPI, the complete monthly trend, regional adoption and regional priority. Adoption views average the relevant adoption field. The priority view uses the minimum of the fixed-region priority value, because that value repeats across underlying rows; summing it would inflate the result.
 
-التعريف الوطني الحسابي يطابق التمارين؛ البديل المرجح بالمعاملات يتجاوز 65 ويضع الباحة بدل جازان ضمن أعلى ثلاث أولويات. لا تخلط التعريفين بين الرسم والتوصية.
-
-## للاستخدام أثناء الإلقاء
-
-العرض هو المسار الرئيسي؛ افتح Tableau للأدلة الإضافية والأسئلة. قبل تقديم الرسم، عرّف الشهر والمحور ووحدة القياس وخط الهدف. بعد التحقق الفعلي، يمكن تصدير الرسوم من Tableau واستبدال الرسوم المطابقة داخل الشرائح دون زيادة عددها. لا تصف ذلك بأنه تم قبل تنفيذه.
+See [methodology](METHODOLOGY.md), [regional priorities](../analysis/regional_priorities.csv) and [the notebook](../analysis/capstone_analysis.ipynb) for independent reproduction. Record successful Tableau opening and reconcile these checks before relying on the workbook during the live presentation.
