@@ -21,11 +21,11 @@ Each record represents one **month × region × service category × channel** co
 
 ## Interpretation rules
 
-- All records are synthetic training data; findings do not describe verified real-world service performance.
-- The course adoption index is the arithmetic mean of `digital_adoption_pct` in the selected period and geography. It is not a directly measured share of digital transactions.
-- Differences between percentages are stated in **percentage points**. Moving from 60% to 65% is a five-point increase.
-- Do not sum percentages. Do not sum `unique_users` across services or channels as a national count, because individuals may overlap.
-- Transaction weighting is an explicitly disclosed sensitivity analysis. It changes both the national assessment and the regional shortlist.
-- The priority index combines the positive target gap with transaction activity. It does not estimate converted transactions, causal impact or financial return.
+- All records are synthetic training data.
+- Adoption = SUM(digital_adoption_pct × unique_users) / SUM(unique_users), matching the supplied Tableau reference.
+- Differences are percentage points.
+- Users may overlap across records. Total weights are not a deduplicated population.
+- Priority is the positive gap to 65%, without a transaction-volume multiplier.
+- Budgets are proposals. Costs, causal improvement and financial return are not established.
 
-See [methodology](../docs/METHODOLOGY.md) for formulas and [the executed notebook](../analysis/capstone_analysis.ipynb) for reproducible calculations.
+[Methodology](../docs/METHODOLOGY.md), [executed notebook](../analysis/capstone_analysis.ipynb).

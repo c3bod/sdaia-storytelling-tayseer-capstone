@@ -1,31 +1,21 @@
-# Independent review and corrections
+# Alignment review report
 
-The independent artifact review gave the initial package a provisional **86/100**, followed by **91/100** after substantive corrections. These are review estimates, not an official academy grade or a guarantee of the final result.
+The final presentation and shared Tableau measure now agree with the analysis, notebook, packaged workbook, slide charts, budget table, notes and documentation.
 
-## Corrections completed
-
-| Finding | Correction |
+| Area | Final result |
 |---|---|
-| Evidence needed a clearer decision rule and visible limitations | Annotated priority chart covers all nine lagging regions, with formula, gaps, selected share and the near-tied third/fourth places. |
-| Metric sensitivity could change the recommendation | Transaction-weighted national adoption and the changed shortlist are explicitly disclosed in the deck, notebook and methodology. |
-| Funding prerequisites were insufficiently explicit | Metric, baseline, comparison design, service plans and costs must be approved before intervention or pilot release. |
-| Initial pilot amounts could appear to total 9.99M due to rounding | Largest-remainder rounding at 0.01M resolution gives 3.72M + 3.14M + 3.14M = exactly 10M. |
-| Scenario could be interpreted as a forecast | The 64.45% result is labelled conditional arithmetic, with no causal or investment-response claim. |
-| Review timing needed to account for actual pilot exposure | Day 90 starts at envelope approval; actual exposure is reported and the review extended if insufficient. |
-| Delivery files and references needed consistency | Final PowerPoint, PDF, analysis, notebook and documentation were reconciled; local links resolve. |
+| Adoption | User-weighted supplied percentages. December national result: 66.21%. |
+| Laggards | Eight of 13 regions below 65%. |
+| Priority | Positive target gap, descending. |
+| Four widest | Najran, Northern Borders, Al-Baha and Jazan. |
+| Gap concentration | 86.96%, displayed as 87%. |
+| Budget | Full 40M for eight regions: 35M to first four, 5M to others. |
+| Amounts | 13.5, 7.5, 7.5, 6.5, 2, 1.5, 1 and 0.5 million SAR. |
+| Follow-up | Validate local costs/plans within 30 days before spending; review after six months. |
+| Expected effect | Aim toward 65%, without an unsupported numeric causal forecast. |
+| Highlighting | Every below-target region, including Al-Baha, emphasized. |
+| Language | English slides/public documentation; short Arabic presenter notes. |
 
-## Verified artifacts
+Independent raw-source recomputation, rounding, four chart series, embedded spreadsheets, native allocation table, Tableau package, PDF pages, notebook and document links are checked. Final slides were rendered for visual review.
 
-- Source CSV: 24,960 records, 12 columns, complete dimension grid and no missing values or duplicate keys.
-- Seven-slide PowerPoint with three native charts and three native tables; all four embedded chart series match raw-data calculations at reporting precision.
-- Seven-page PDF generated from the reviewed PowerPoint renders.
-- Seven executed notebook calculation cells, reconciled with the analysis summary and without execution errors.
-- Budget envelopes total 40M and initial regional pilot amounts total 10M.
-- Tableau package includes the unchanged source data, four worksheets and one dashboard; official schema validation passed.
-- Published documentation, presentation notes and notebook introduction use English.
-
-## Limits on the review
-
-The original Day 2 dashboard was unavailable. Actual Tableau opening and visual inspection, timed presentation rehearsal, required contributor configuration and the instructor's Google Form submission remain external completion checks. Synthetic data do not support causal investment-return claims.
-
-See [delivery checks](VALIDATION.md), [requirements](REQUIREMENTS_CHECKLIST.md) and [submission status](SUBMISSION_READY.md) for reproducible evidence and current completion status.
+This is a consistency review, not an official academy grade. [Validation](VALIDATION.md) and [submission status](SUBMISSION_READY.md) distinguish verified files from external steps.

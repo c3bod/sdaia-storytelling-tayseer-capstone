@@ -1,49 +1,45 @@
-# Evidence and decision method
+# Methodology
 
-## Scope and sources
+Synthetic course CSV: 24,960 rows, 12 columns, 48 months, 13 regions, eight services and five channels. Each row is month × region × service × channel. Coverage: January 2022–December 2025.
 
-SDAIA Academy SDA-DSC-112 capstone. The decision is where to direct a hypothetical SAR 40 million to move lagging Tayseer regions toward 65% digital adoption. All observations are synthetic training data. The supplied CSV contains 24,960 monthly region × service × channel records, January 2022–December 2025. The full 48 × 13 × 8 × 5 grid is present. There are no missing cells or duplicate dimension keys. These checks establish structural completeness, not real-world validity.
+The supplied final presentation is the story baseline. The [shared Tableau reference](https://public.tableau.com/views/Dvis_17912834975050/TayseerDigitalAdoption) belongs to the user-supplied project. Its embedded CSV is byte-identical to our source, and its two worksheets filter December 2025. Our monthly trend is additionally computed from the full CSV using the same weighted definition.
 
-## Main metric follows the course labs
+## Formula and results
 
-Regional adoption = arithmetic mean of `digital_adoption_pct` across the 40 service × channel records in a region and month. National adoption = arithmetic mean of the 520 records for that month. Each region has the same number of records, so the national value is also the mean of the 13 regional values. These are course indices. They must not be described as digital transactions divided by total transactions. Do not sum percentage values. Report gaps and changes in percentage points, not relative percentages.
+`adoption (%) = SUM(digital_adoption_pct * unique_users) / SUM(unique_users)`
 
-All current-status comparisons and priority rankings use December 2025. The trend uses the full 48 months; no full-period regional average is compared with a latest-month figure.
+Percentages already use a 0–100 scale. Tableau's division by 100 before weighting and multiplication by 100 afterward is equivalent.
 
-## Priority criterion
+For December regions, `gap_pp = MAX(65 - adoption, 0)`. Rank positive gaps descending, with region name as a deterministic tie-breaker. Transaction activity does not set this ranking.
 
-Priority index = `max(65 - regional adoption, 0) / 100 × latest-month transactions`.
+National adoption: 66.210761%, versus 54.142142% in January 2022. Growth: 12.068619 points. Headroom: 1.210761 points. Eight of 13 regions are below 65%.
 
-The index combines the adoption shortfall with observed activity. It is a decision proxy; it is not a count of transactions that would convert to digital. Regions already at target receive zero in this gap-focused ranking. The index does not estimate marginal investment returns or establish root causes. It is selected for the capstone decision and is not a rule mandated by the course.
+Najran, Northern Borders, Al-Baha and Jazan have the four widest gaps. Their combined gaps divided by all eight positive gaps equal 86.957753%, displayed as 87%. This is a share of summed gaps, not people or transactions.
 
-The top three are Najran, Jazan and Northern Borders. Together they represent 42.61% of the gap × volume index across the nine lagging regions. This is not 42.61% of users or transactions.
+## Budget
 
-## Metric sensitivity affects the decision
+Compute `40 * gap / total positive gap` million SAR per laggard. Divide ideals by 0.5, floor the unit counts, then distribute remaining units to the largest fractional remainders. Ties retain gap order. Exactly 80 half-million units are allocated.
 
-The third and fourth course-definition scores are a near tie: Northern Borders 446.2596675 versus Al-Baha 445.6011875, only 0.65848 index units apart (about 0.15% of Al-Baha's score). This is a descriptive ranking difference, not a statistically established separation. Small measurement or definition changes can alter the selection. Funding remains provisional pending baseline and service-demand verification.
+| Region | SAR M |
+|---|---:|
+| Najran | 13.5 |
+| Northern Borders | 7.5 |
+| Al-Baha | 7.5 |
+| Jazan | 6.5 |
+| Asir | 2 |
+| Tabuk | 1.5 |
+| Hail | 1 |
+| Al-Jouf | 0.5 |
+| Total | 40 |
 
-As a sensitivity check, weight the supplied adoption percentages by transaction volume within each region. Then recalculate the same ranking. The resulting top three are Najran, Northern Borders and Al-Baha. The method changes both the overall national index and the third region selected. Weighting is an alternative definition of the index; neither index is a directly observed national digital-transaction share. The presentation uses the supplied lab definition consistently and discloses that Al-Baha replaces Jazan in the alternative ranking. The pilot must confirm the agreed metric and actual service-level demand before further releases. If the decision maker adopts the weighted definition, rerank and reallocate rather than keeping the current allocation.
+First four: 35M. Other four: 5M. Alternatives are 5M per laggard or 10M per region in the four widest gaps.
 
-## Allocation and alternatives
+## Limits and follow-up
 
-The weighted national December index is 66.118639%, above 65%, versus 63.328346% for the course arithmetic-mean index. National target status therefore reverses under the alternative definition. This reinforces the requirement to agree the metric before using the target gap for funding decisions.
+The metric is a user-weighted index, not an independently observed digital-transaction share. Users may overlap across services and channels; summed weights are not a deduplicated population. Synthetic observations do not establish intervention costs, causes, financial return or a numeric investment effect.
 
-Three options are compared: equal allocation across nine lagging regions; concentration of the full SAR 40 million in the current top three; or staged funding of those three with an evaluation reserve. The recommendation is the staged option: Najran SAR 13M, Jazan SAR 11M, Northern Borders SAR 11M and SAR 5M retained for cross-region measurement and subsequent reassessment. The regional SAR 35M envelope is proportional to the three priority scores, rounded to whole millions using largest remainders. This is a proposed envelope, not an implementation cost estimate. It is not derived from regional population sizes or verified project quotations.
+Approve the full regional allocation and appoint a lead. Validate local service plans and costs within 30 days before spending. Review adoption, spending and service quality after six months. These dates are proposed.
 
-Approve SAR 40M and authorize an initial SAR 10M for pilots (3.72M, 3.14M, 3.14M), conditional on approval of the metric, measured baseline, comparison design, verified shortlist, service plans and costs before any release or intervention. Appoint an accountable owner at approval; launch within 30 days only if these prerequisites are met. Hold SAR 30M. The remaining SAR 25M regional envelope and SAR 5M reserve depend on evidence and the day-90 review. Exact procurement amounts require quotations and intervention design.
+Source SHA-256: `1f8b72a24356f8aa07d983de21e069ed7c36e48a309b03be8a24c99789ab56c6`.
 
-Candidate interventions include assisted digital onboarding and testing friction in high-volume services. These are hypotheses to test, not causes proven by this dataset. Evaluate service-level adoption and user feedback with a suitable comparison; descriptive correlations alone do not prove impact.
-
-## Expected effect and limits
-
-The intended effect is higher adoption in the funded regions while maintaining customer satisfaction and service performance. No causal investment-response model is supplied, so there is no defensible forecast that SAR 40M buys a specified adoption increase.
-
-The deck includes a conditional scenario: if the three selected regional indices each reach 65% and all other regions remain unchanged, the national course index rises from 63.33% to 64.45%. It remains 0.55 percentage points below 65%. This is arithmetic, not a forecast or promise; a further wave would still be required. The scenario follows the course's equally weighted regional definition and must be recalculated if that definition changes.
-
-Day-90 continuation criteria are proposed management thresholds: at least +2 percentage points relative to the verified baseline in each pilot region, no deterioration in the matched service/customer satisfaction and SLA measures, a defensible comparison indicating improvement, and an accepted implementation cost. These are pilot goals, not model predictions. Changes in composition and seasonality must be checked.
-
-## Reproduction
-
-Day 90 is counted from envelope approval, not assumed to mean 90 days of intervention. Record the actual launch date and exposure duration. Extend evaluation when exposure, comparison data or seasonal coverage is insufficient; the proposed +2pp goal does not justify attribution by itself.
-
-Run `python analysis/analyze.py` with pandas and numpy. It writes summary JSON and evidence CSVs. `analysis/capstone_analysis.ipynb` presents the same method for Colab/Jupyter. The Tableau workbook uses the same source CSV, date and arithmetic-mean definition. `docs/TABLEAU_GUIDE.md` describes how to inspect the workbook and verify the evidence in Tableau.
+[Analysis](../analysis/analyze.py), [independent notebook](../analysis/capstone_analysis.ipynb), [validation](VALIDATION.md).
